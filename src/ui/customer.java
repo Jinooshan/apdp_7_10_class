@@ -21,6 +21,7 @@ public class customer extends javax.swing.JFrame {
     public customer() {
         initComponents();
         show_customer();
+        sum();
     }
 
     /**
@@ -241,16 +242,16 @@ public class customer extends javax.swing.JFrame {
         }
     }
 
-    public void sum(){
+    public void sum() {
         double total = 0;
         DefaultTableModel model = (DefaultTableModel) tblCustomer.getModel();
-        for( int i=0 ; i < tblCustomer.getRowCount(); i++  ){
+        for (int i = 0; i < tblCustomer.getRowCount(); i++) {
             total = total + Double.parseDouble(model.getValueAt(i, 2).toString());
         }
-       lbl_total.setText(Double.toHexString(total));
+        lbl_total.setText(Double.toString(total));
 
-}
-    
+    }
+
     /**
      * @param args the command line arguments
      */
